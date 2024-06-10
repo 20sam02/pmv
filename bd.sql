@@ -1,0 +1,3 @@
+comidas
+bedidas
+alojamientos
