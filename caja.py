@@ -15,7 +15,7 @@ class loginAdmin:
     def loginPM():
         try: 
             base = Tk()
-            base.geometry("500x281+500+50")
+            base.geometry("500x280+500+50")
             base.title("LOGIN ADMIN PLAYAMAR")
             base.resizable(width=False, height=False)
             fondo = tk.PhotoImage(file="images/login.png")
