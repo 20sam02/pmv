@@ -1,16 +1,40 @@
+import tkinter as tk
+
+from tkinter import *
+from tkinter import ttk
+from tkinter import messagebox
+
 import mysql.connector
 conexion = mysql.connector.connect(user='sam1', password='1234', host='localhost', database='pmvpos', port='3306')
 print(conexion)
 
-conn = mysql.connector.connect(conexion)
-cursor = conn.cursor()
+#COLORES
+#FAFAFA
+
+class loginAdmin:
+    def loginPM():
+        try: 
+            base = Tk()
+            base.geometry("500x281+500+50")
+            base.title("LOGIN ADMIN PLAYAMAR")
+            base.resizable(width=False, height=False)
+            fondo = tk.PhotoImage(file="images/login.png")
+            fondologin = tk.Label(base, image=fondo).place(x=0, y=0, relwidth=1, relheight=1)
+
+            groupBox = LabelFrame()
 
 
-try: 
-    conn = mysql.connector.connect(conexion)
-    print("conexión exitosa")
-except mysql.connector.Error as err:
-        print(f"Error al conectar: {err}")
+
+
+
+
+
+            base.mainloop()
+
+        except ValueError as error:
+            print("Error al mostrar la interfaz: {}".format(error))
+
+    loginPM()
 
 user = 'admin'
 pwd = '1234'
@@ -24,28 +48,29 @@ print ("contraseña")
 pwd = input(int)
 
 if user == user and pwd == pwd :
-    print ("credenciales conrrectas")
+    print ("credenciales correctas")
 else:
     print("usuario o contraseña incorrecta")
 
-print("OPCIONES:")
-print("1. Totalizar venta y generar facturas. 2. inventario de bebidas. 3. Inventario. 4. Ver resumen diario.")
-options = input(int)
+class FormularioProductos:
+
+    def FormularioP():
+
+        try: 
+            base = Tk()
+            base.geometry("1200x300")
+            base.title("Inventario Productos")
+
+            groupBox = LabelFrame()
 
 
-if options == 2 :
-    def agg_prod(ID, Nombre, Cantidad):
-        query = "INSERT INTO inventario_bebidas (ID, Nombre, Cantidad) VALUES (%s, %s)"
-        value = (ID, Nombre, Cantidad)
-        cursor.execute(query, value)
-        conn.commit()
-    def del_prod(ID, Nombre, Cantidad):
-        query = "DELETE FROM inventarios_bebidas WHERE ID (%s)"
-        value = (ID,)
-        cursor.execute(query, value)
-        conn.commit()
-     
 
 
-cursor.close()
-conn.close()
+
+
+            base.mainloop()
+
+        except ValueError as error:
+            print("Error al mostrar la interfaz: {}".format(error))
+
+    FormularioP()
