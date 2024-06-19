@@ -1,5 +1,5 @@
 import tkinter as tk
-
+import tkinter.messagebox
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
@@ -10,67 +10,83 @@ print(conexion)
 
 #COLORES
 #FAFAFA
-
+#EDF0F3
+#182F43
 class loginAdmin:
     def loginPM():
         try: 
+            
+
             base = Tk()
-            base.geometry("500x280+500+50")
+            base.geometry("546x502+500+50")
             base.title("LOGIN ADMIN PLAYAMAR")
             base.resizable(width=False, height=False)
-            fondo = tk.PhotoImage(file="images/login.png")
+            fondo = tk.PhotoImage(file="images/login5.png")
             fondologin = tk.Label(base, image=fondo).place(x=0, y=0, relwidth=1, relheight=1)
+            #COLORES
+            color_entrar = "#EDF0F3"
+            color_login = "#FFFFFF"
+            color_usuario="#FAFAFA"
+            color_contraseña="#FFFFFF"
 
-            groupBox = LabelFrame()
+            usuario_login = tk.StringVar()
+            pwd_login = tk.StringVar()
 
+            #ENTRADAS
 
+            entradauser = tk.Entry(base, textvar=usuario_login, width=30, font = ("Roboto", 13) , relief="flat", bg=color_usuario)
+            entradauser.place(x=170, y=260)
 
+            entradapwd = tk.Entry(base, textvar=pwd_login, width=30, font = ("Roboto", 13), relief="flat", bg=color_usuario, show="*")
+            entradapwd.place(x= 170, y = 370)
+            
+            
+                  
 
+            #BOTONES
+            boton = tk.Button(base, text="Entrar", cursor="hand2", bg=color_login, width=12, relief="flat", font=("Roboto", 13), command=lambda: login())
+            boton.place(x=257, y=440)
 
+            def login():
+                nombre = entradauser.get()
+                contraseña = entradapwd.get()
 
+                if nombre == "admin" and contraseña == "1234":
+                    programapmv()
+                else:
+                    tkinter.messagebox.showinfo("Error","Credenciales incorrectas")
 
-            base.mainloop()
-
+            def programapmv():
+                
+                        base.withdraw()
+                        Pbase = tk.Toplevel()
+                        Pbase.title("Inventario Productos")
+                        Pbase.geometry("800x640+500+50")
+                        fondo = tk.PhotoImage(file="images/NS.jpeg")
+                        fondo1 = tk.Label(Pbase, image=fondo).place(x=0, y=0, relheight=1, relwidth=1)
+                        Pbase.mainloop()        
+         
         except ValueError as error:
-            print("Error al mostrar la interfaz: {}".format(error))
+                    print("Error al mostrar la interfaz: {}".format(error))
 
-    loginPM()
+        base.mainloop()
 
-user = 'admin'
-pwd = '1234'
+loginAdmin.loginPM()
+#user = 'admin'
+#pwd = '1234'
 
-options = ()
-print("Ingresa el usuario y contraseña")
+#options = ()
+#print("Ingresa el usuario y contraseña")
 
-print("usuario: ")
-user = input(str)
-print ("contraseña")
-pwd = input(int)
+#print("usuario: ")
+#user = input(str)
+#print ("contraseña")
+#pwd = input(int)
 
-if user == user and pwd == pwd :
-    print ("credenciales correctas")
-else:
-    print("usuario o contraseña incorrecta")
-
-class FormularioProductos:
-
-    def FormularioP():
-
-        try: 
-            base = Tk()
-            base.geometry("1200x300")
-            base.title("Inventario Productos")
-
-            groupBox = LabelFrame()
+#if user == user and pwd == pwd :
+#    print ("credenciales correctas")
+#else:
+#    print("usuario o contraseña incorrecta")
 
 
-
-
-
-
-            base.mainloop()
-
-        except ValueError as error:
-            print("Error al mostrar la interfaz: {}".format(error))
-
-    FormularioP()
+#class FormularioProductos:
