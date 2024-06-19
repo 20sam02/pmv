@@ -55,23 +55,36 @@ class loginAdmin:
                     programapmv()
                 else:
                     tkinter.messagebox.showinfo("Error","Credenciales incorrectas")
-
-            def programapmv():
                 
-                        base.withdraw()
-                        Pbase = tk.Toplevel()
-                        Pbase.title("Inventario Productos")
-                        Pbase.geometry("800x640+500+50")
-                        fondo = tk.PhotoImage(file="images/NS.jpeg")
-                        fondo1 = tk.Label(Pbase, image=fondo).place(x=0, y=0, relheight=1, relwidth=1)
-                        Pbase.mainloop()        
+            def programapmv():
+                  base.withdraw()
+                  paginaprincipal.pmvinter()
+
+
+                  
          
         except ValueError as error:
                     print("Error al mostrar la interfaz: {}".format(error))
 
         base.mainloop()
 
-loginAdmin.loginPM()
+class paginaprincipal:
+    def pmvinter():
+        try:
+           
+            Pbase = tk.Toplevel()
+            Pbase.title("Inventario Productos")
+            Pbase.geometry("1024x640+500+50")
+            fondo = tk.PhotoImage(file="images/login1.png")
+            fondo1 = tk.Label(Pbase, image=fondo).place(x=0, y=0, relheight=1, relwidth=1)
+                        
+                        
+        except ValueError as error:
+                    print("Error al mostrar la interfaz: {}".format(error))       
+
+        Pbase.mainloop()  
+        
+loginAdmin.loginPM()            
 #user = 'admin'
 #pwd = '1234'
 
@@ -90,3 +103,5 @@ loginAdmin.loginPM()
 
 
 #class FormularioProductos:
+
+#base.withdraw()
