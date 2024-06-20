@@ -3,6 +3,7 @@ import tkinter.messagebox
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
+from PIL import Image
 import sqlite3 
 
 conn = sqlite3.connect('pmvpos')
@@ -10,10 +11,7 @@ import mysql.connector
 conexion = mysql.connector.connect(user='sam1', password='1234', host='localhost', database='pmvpos', port='3306')
 print(conexion)
 
-#COLORES
-#FAFAFA
-#EDF0F3
-#182F43
+
 class loginAdmin:
     def loginPM():
         try: 
@@ -82,8 +80,17 @@ class paginaprincipal:
             fondo1 = tk.Label().place(x=0, y=0, relheight=1, relwidth=1)
 
             #BOTONES
-            boton = tk.Button(Pbase, text="Generar Factura", cursor="hand2", bg=None, width=12, height= 5, relief="flat", font=("Roboto", 13), command=lambda: generaFactura())
+            #IMAGENES DE LOS BOTONES:
+            icongGenFactura = PhotoImage(file="imsvg/factura1.png")
+            iconAnadirPr = PhotoImage(file="imsvg/anadirproductos2.png")
+            iconInventario = PhotoImage(file="imsvg/inventario2.png")
+            iconSiigoApi = PhotoImage(file="imsvg/siigolg.png")
+
+
+
+            boton = tk.Button(Pbase, text="Generar Factura", image= icongGenFactura, compound="bottom", cursor="hand2", bg=None, width=200, height= 130, relief="flat", font=("Roboto", 13), command=lambda: generaFactura())
             boton.place(x=0, y=5)
+            
 
             def generaFactura():
                 ventanaFactura = Tk()
@@ -92,8 +99,8 @@ class paginaprincipal:
                 fondo = tk.PhotoImage(file="images/login1.png")
                 fondo1 = tk.Label().place(x=0, y=0, relheight=1, relwidth=1)
 
-            boton = tk.Button(Pbase, text="Añadir productos", cursor="hand2", bg=None, width=20, height=5, relief="flat", font=("Roboto", 13), command=lambda: anadirproductos() )
-            boton.place(x=233, y=5)
+            boton = tk.Button(Pbase, text="Añadir productos", image=iconAnadirPr, compound="bottom", cursor="hand2", bg=None, width=200, height=130, relief="flat", font=("Roboto", 13), command=lambda: anadirproductos() )
+            boton.place(x=200, y=5)
 
             def anadirproductos():
                 ventanaFactura = Tk()
@@ -102,8 +109,8 @@ class paginaprincipal:
                 fondo = tk.PhotoImage(file="images/login1.png")
                 fondo1 = tk.Label().place(x=0, y=0, relheight=1, relwidth=1)
 
-            boton = tk.Button(Pbase,text="Inventario", cursor="hand2", bg=None, width=12, height=5, relief="flat", font=("Roboto", 13), command=lambda: inventario())
-            boton.place(x=430, y=5)
+            boton = tk.Button(Pbase,text="Inventario", cursor="hand2", image= iconInventario, compound="bottom", bg=None, width=200, height=130, relief="flat", font=("Roboto", 13), command=lambda: inventario())
+            boton.place(x=500, y=5)
 
             def inventario():
                 ventanaFactura = Tk()
@@ -111,10 +118,8 @@ class paginaprincipal:
                 ventanaFactura.geometry("1000x530+500+50")
                 fondo = tk.PhotoImage(file="images/login1.png")
                 fondo1 = tk.Label().place(x=0, y=0, relheight=1, relwidth=1)
-                
-
-            boton2 = tk.Button(Pbase, text="Siigo API", cursor="hand2", bg=None, width=12, height=5, relief="flat", font=("Roboto", 13),  command=lambda: siigoAPI())
-            boton2.place(x=340, y=5)
+            boton2 = tk.Button(Pbase, text="Siigo API", cursor="hand2", image=iconSiigoApi, compound="bottom", bg=None, width=200, height=130, relief="flat", font=("Roboto", 13),  command=lambda: siigoAPI())
+            boton2.place(x=800, y=5)
 
             def siigoAPI():
                 ventanaFactura = Tk()
@@ -122,12 +127,7 @@ class paginaprincipal:
                 ventanaFactura.geometry("1000x530+500+50")
                 fondo = tk.PhotoImage(file="images/login1.png")
                 fondo1 = tk.Label().place(x=0, y=0, relheight=1, relwidth=1)
-            
-            
     
-
-                        
-                        
         except ValueError as error:
                     print("Error al mostrar la interfaz: {}".format(error))       
 
