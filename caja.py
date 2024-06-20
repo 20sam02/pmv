@@ -3,7 +3,9 @@ import tkinter.messagebox
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
+import sqlite3 
 
+conn = sqlite3.connect('pmvpos')
 import mysql.connector
 conexion = mysql.connector.connect(user='sam1', password='1234', host='localhost', database='pmvpos', port='3306')
 print(conexion)
@@ -46,6 +48,7 @@ class loginAdmin:
             #BOTONES
             boton = tk.Button(base, text="Entrar", cursor="hand2", bg=color_login, width=12, relief="flat", font=("Roboto", 13), command=lambda: login())
             boton.place(x=257, y=440)
+            
 
             def login():
                 nombre = entradauser.get()
@@ -73,10 +76,56 @@ class paginaprincipal:
         try:
            
             Pbase = tk.Toplevel()
-            Pbase.title("Inventario Productos")
+            Pbase.title("PAGINA PRINCIPAL")
             Pbase.geometry("1024x640+500+50")
             fondo = tk.PhotoImage(file="images/login1.png")
-            fondo1 = tk.Label(Pbase, image=fondo).place(x=0, y=0, relheight=1, relwidth=1)
+            fondo1 = tk.Label().place(x=0, y=0, relheight=1, relwidth=1)
+
+            #BOTONES
+            boton = tk.Button(Pbase, text="Generar Factura", cursor="hand2", bg=None, width=12, height= 5, relief="flat", font=("Roboto", 13), command=lambda: generaFactura())
+            boton.place(x=0, y=5)
+
+            def generaFactura():
+                ventanaFactura = Tk()
+                ventanaFactura.title("GENERAR FACTURA")
+                ventanaFactura.geometry("1000x530+500+50")
+                fondo = tk.PhotoImage(file="images/login1.png")
+                fondo1 = tk.Label().place(x=0, y=0, relheight=1, relwidth=1)
+
+            boton = tk.Button(Pbase, text="Añadir productos", cursor="hand2", bg=None, width=20, height=5, relief="flat", font=("Roboto", 13), command=lambda: anadirproductos() )
+            boton.place(x=233, y=5)
+
+            def anadirproductos():
+                ventanaFactura = Tk()
+                ventanaFactura.title("AÑADIR PRODUCTOS")
+                ventanaFactura.geometry("1000x530+500+50")
+                fondo = tk.PhotoImage(file="images/login1.png")
+                fondo1 = tk.Label().place(x=0, y=0, relheight=1, relwidth=1)
+
+            boton = tk.Button(Pbase,text="Inventario", cursor="hand2", bg=None, width=12, height=5, relief="flat", font=("Roboto", 13), command=lambda: inventario())
+            boton.place(x=430, y=5)
+
+            def inventario():
+                ventanaFactura = Tk()
+                ventanaFactura.title("INVENTARIO")
+                ventanaFactura.geometry("1000x530+500+50")
+                fondo = tk.PhotoImage(file="images/login1.png")
+                fondo1 = tk.Label().place(x=0, y=0, relheight=1, relwidth=1)
+                
+
+            boton2 = tk.Button(Pbase, text="Siigo API", cursor="hand2", bg=None, width=12, height=5, relief="flat", font=("Roboto", 13),  command=lambda: siigoAPI())
+            boton2.place(x=340, y=5)
+
+            def siigoAPI():
+                ventanaFactura = Tk()
+                ventanaFactura.title("SIIGO API")
+                ventanaFactura.geometry("1000x530+500+50")
+                fondo = tk.PhotoImage(file="images/login1.png")
+                fondo1 = tk.Label().place(x=0, y=0, relheight=1, relwidth=1)
+            
+            
+    
+
                         
                         
         except ValueError as error:
@@ -85,23 +134,3 @@ class paginaprincipal:
         Pbase.mainloop()  
         
 loginAdmin.loginPM()            
-#user = 'admin'
-#pwd = '1234'
-
-#options = ()
-#print("Ingresa el usuario y contraseña")
-
-#print("usuario: ")
-#user = input(str)
-#print ("contraseña")
-#pwd = input(int)
-
-#if user == user and pwd == pwd :
-#    print ("credenciales correctas")
-#else:
-#    print("usuario o contraseña incorrecta")
-
-
-#class FormularioProductos:
-
-#base.withdraw()
