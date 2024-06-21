@@ -3,6 +3,7 @@ import tkinter.messagebox
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
+from agregarpd import *
 
 import sqlite3 
 
@@ -114,9 +115,9 @@ class paginaprincipal:
             def anadirproductos():
                 ventanaFactura = Tk()
                 ventanaFactura.title("AÑADIR PRODUCTOS")
-                ventanaFactura.geometry("1000x530+500+50")
-                fondo = tk.PhotoImage(file="images/login1.png")
-                fondo1 = tk.Label().place(x=0, y=0, relheight=1, relwidth=1)
+                
+                app = aggProductos(ventanaFactura)
+                app.mainloop()
 
             boton = tk.Button(Pbase,text="Inventario", cursor="hand2", image= iconInventario, 
                               compound="bottom", bg=None, width=200, height=130, relief="flat", 
