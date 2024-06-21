@@ -3,13 +3,14 @@ import tkinter.messagebox
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
-from PIL import Image
+
 import sqlite3 
 
-conn = sqlite3.connect('pmvpos')
-import mysql.connector
-conexion = mysql.connector.connect(user='sam1', password='1234', host='localhost', database='pmvpos', port='3306')
-print(conexion)
+conn = sqlite3.connect('pmvpos.db')
+#import mysql.connector
+#conexion = mysql.connector.connect(user='sam1', password='1234', host='localhost', database='pmvpos', port='3306')
+#print(conexion)
+print(conn)
 
 
 class loginAdmin:
@@ -34,17 +35,21 @@ class loginAdmin:
 
             #ENTRADAS
 
-            entradauser = tk.Entry(base, textvar=usuario_login, width=30, font = ("Roboto", 13) , relief="flat", bg=color_usuario)
+            entradauser = tk.Entry(base, textvar=usuario_login, width=30, 
+                                   font = ("Roboto", 13) , relief="flat", bg=color_usuario)
             entradauser.place(x=170, y=260)
 
-            entradapwd = tk.Entry(base, textvar=pwd_login, width=30, font = ("Roboto", 13), relief="flat", bg=color_usuario, show="*")
+            entradapwd = tk.Entry(base, textvar=pwd_login, width=30, 
+                                  font = ("Roboto", 13), relief="flat", bg=color_usuario, show="*")
             entradapwd.place(x= 170, y = 370)
             
             
                   
 
             #BOTONES
-            boton = tk.Button(base, text="Entrar", cursor="hand2", bg=color_login, width=12, relief="flat", font=("Roboto", 13), command=lambda: login())
+            boton = tk.Button(base, text="Entrar", cursor="hand2", 
+                              bg=color_login, width=12, relief="flat", 
+                              font=("Roboto", 13), command=lambda: login())
             boton.place(x=257, y=440)
             
 
@@ -88,7 +93,9 @@ class paginaprincipal:
 
 
 
-            boton = tk.Button(Pbase, text="Generar Factura", image= icongGenFactura, compound="bottom", cursor="hand2", bg=None, width=200, height= 130, relief="flat", font=("Roboto", 13), command=lambda: generaFactura())
+            boton = tk.Button(Pbase, text="Generar Factura", image= icongGenFactura, 
+                              compound="bottom", cursor="hand2", bg=None, width=200, 
+                              height= 130, relief="flat", font=("Roboto", 13), command=lambda: generaFactura())
             boton.place(x=0, y=5)
             
 
@@ -96,10 +103,12 @@ class paginaprincipal:
                 ventanaFactura = Tk()
                 ventanaFactura.title("GENERAR FACTURA")
                 ventanaFactura.geometry("1000x530+500+50")
-                fondo = tk.PhotoImage(file="images/login1.png")
-                fondo1 = tk.Label().place(x=0, y=0, relheight=1, relwidth=1)
+                
 
-            boton = tk.Button(Pbase, text="Añadir productos", image=iconAnadirPr, compound="bottom", cursor="hand2", bg=None, width=200, height=130, relief="flat", font=("Roboto", 13), command=lambda: anadirproductos() )
+
+            boton = tk.Button(Pbase, text="Añadir productos", image=iconAnadirPr, 
+                              compound="bottom", cursor="hand2", bg=None, width=200, 
+                              height=130, relief="flat", font=("Roboto", 13), command=lambda: anadirproductos() )
             boton.place(x=200, y=5)
 
             def anadirproductos():
@@ -109,7 +118,9 @@ class paginaprincipal:
                 fondo = tk.PhotoImage(file="images/login1.png")
                 fondo1 = tk.Label().place(x=0, y=0, relheight=1, relwidth=1)
 
-            boton = tk.Button(Pbase,text="Inventario", cursor="hand2", image= iconInventario, compound="bottom", bg=None, width=200, height=130, relief="flat", font=("Roboto", 13), command=lambda: inventario())
+            boton = tk.Button(Pbase,text="Inventario", cursor="hand2", image= iconInventario, 
+                              compound="bottom", bg=None, width=200, height=130, relief="flat", 
+                              font=("Roboto", 13), command=lambda: inventario())
             boton.place(x=500, y=5)
 
             def inventario():
@@ -118,7 +129,9 @@ class paginaprincipal:
                 ventanaFactura.geometry("1000x530+500+50")
                 fondo = tk.PhotoImage(file="images/login1.png")
                 fondo1 = tk.Label().place(x=0, y=0, relheight=1, relwidth=1)
-            boton2 = tk.Button(Pbase, text="Siigo API", cursor="hand2", image=iconSiigoApi, compound="bottom", bg=None, width=200, height=130, relief="flat", font=("Roboto", 13),  command=lambda: siigoAPI())
+            boton2 = tk.Button(Pbase, text="Siigo API", cursor="hand2", image=iconSiigoApi, 
+                               compound="bottom", bg=None, width=200, height=130, relief="flat", 
+                               font=("Roboto", 13),  command=lambda: siigoAPI())
             boton2.place(x=800, y=5)
 
             def siigoAPI():
