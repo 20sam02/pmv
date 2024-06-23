@@ -77,6 +77,31 @@ class aggProductos(Frame):
         self.btnCancelar = Button(frame2, text="Eliminar", bg="red", fg="white", command=self.fCancelar)
         self.btnCancelar.place(x=100, y=190, width=75, height=35)
 
+        #TERCER RECUADRO
+        frame3 = Frame(self, bg="brown")
+        frame3.place(x=379, y=0, width=620, height=500)
+
+        #objetos
+
+        tv = ttk.Treeview(frame3, columns=("col1", "col2"))
+
+        tv.column("#0", width=80)
+        tv.column("col1", width=80, anchor=CENTER)
+        tv.column("col2", width=80, anchor=CENTER)
+
+        tv.heading("#0", text="ID", anchor=CENTER)
+        tv.heading("col1", text="Nombre", anchor=CENTER)
+        tv.heading("col2", text="Precio", anchor=CENTER)
+
+        
+        
+        
+
+
+        
+
+        tv.pack()
+
 
         self.mainloop()
     def widgets(self):
@@ -85,3 +110,16 @@ class aggProductos(Frame):
                self.mainloop()
 aggProductos()
            
+#ID = tv.insert("",END, text="Cursos")
+        #tv.insert(ID,END, text="Algebra")
+        #tv.insert(ID,END, text="Cálculo")
+        #tv.insert(ID,END, text="Programación")
+        #tv.insert(ID,END, text="Redes")
+        #tv.insert(ID,END, text="Electrónica")
+        #Nombre = tv.insert("", END, text="Carreras")
+        #tv.insert(Nombre, END, text="ING de sistemas")
+        #tv.insert(Nombre, END, text="Administración de empresas")
+        #tv.insert(Nombre, END, text="Psicología")
+        #tv.insert(Nombre, END, text="Lenguas extranjeras")
+        #tv.insert(Nombre, END, text="Derecho")
+        #tv.insert(Nombre, END, text="Contabilidad")
