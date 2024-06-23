@@ -4,6 +4,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 from agregarpd import *
+from factura import *
 
 import sqlite3 
 
@@ -104,6 +105,11 @@ class paginaprincipal:
                 ventanaFactura = Tk()
                 ventanaFactura.title("GENERAR FACTURA")
                 ventanaFactura.geometry("1000x530+500+50")
+
+                app = FacturaGen(ventanaFactura)
+                app.mainloop()
+
+
                 
 
 
@@ -123,6 +129,7 @@ class paginaprincipal:
                               compound="bottom", bg=None, width=200, height=130, relief="flat", 
                               font=("Roboto", 13), command=lambda: inventario())
             boton.place(x=500, y=5)
+
 
             def inventario():
                 ventanaFactura = Tk()
@@ -148,3 +155,4 @@ class paginaprincipal:
         Pbase.mainloop()  
         
 loginAdmin.loginPM()            
+

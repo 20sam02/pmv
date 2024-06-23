@@ -8,21 +8,20 @@ import sqlite3
 conn = sqlite3.connect('pmvpos.db')
 print(conn)
 
-class aggProductos(Frame):
+class FacturaGen (Frame):
     def __init__(self, master= None):
         super().__init__(master, width=1000, height=680)
         self.master = master
         self.pack()
         self.create_widgets()
-        
-
+    
     #FUNCIONES DE LOS BOTONES DEL PRIMER WIDGET
     def fanadir(self):
         pass
 
     def fModificar(self):
          pass
-    def fEliminar(sefl):
+    def fEliminar(self):
          pass
     
     #FUNCIONES DE LOS BOTONES DEL SEGUNDO WIDGET
@@ -31,7 +30,7 @@ class aggProductos(Frame):
          pass
     def fCancelar(self):
          pass
-
+    
     def create_widgets(self):
 
         #primero recuadro
@@ -102,22 +101,5 @@ class aggProductos(Frame):
         
 
         self.mainloop()
-    
-           
 
-               
-aggProductos()
-           
-#ID = tv.insert("",END, text="Cursos")
-        #tv.insert(ID,END, text="Algebra")
-        #tv.insert(ID,END, text="Cálculo")
-        #tv.insert(ID,END, text="Programación")
-        #tv.insert(ID,END, text="Redes")
-        #tv.insert(ID,END, text="Electrónica")
-        #Nombre = tv.insert("", END, text="Carreras")
-        #tv.insert(Nombre, END, text="ING de sistemas")
-        #tv.insert(Nombre, END, text="Administración de empresas")
-        #tv.insert(Nombre, END, text="Psicología")
-        #tv.insert(Nombre, END, text="Lenguas extranjeras")
-        #tv.insert(Nombre, END, text="Derecho")
-        #tv.insert(Nombre, END, text="Contabilidad")
+FacturaGen()
