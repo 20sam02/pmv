@@ -8,7 +8,7 @@ import sqlite3
 conn = sqlite3.connect('pmvpos.db')
 print(conn)
 
-class aggProductos(Frame):
+class aggProductos(ttk.Frame):
     def __init__(self, master= None):
         super().__init__(master, width=1000, height=680)
         self.master = master
@@ -78,13 +78,23 @@ class aggProductos(Frame):
         self.btnCancelar = Button(frame2, text="Eliminar", bg="red", fg="white", command=self.fCancelar)
         self.btnCancelar.place(x=100, y=190, width=75, height=35)
 
-        #TERCER RECUADRO
+
+
+#TERCER RECUADRO
+
+    
+        
+        frame3=tk.Tk()
         frame3 = Frame(self, bg="brown")
         frame3.place(x=379, y=0, width=620, height=500)
 
-        #objetos
+        #frame3 = tk.Listbox()
+        #frame3.insert
 
+
+        #objetos
         
+
         frame3.grid= ttk.Treeview(frame3, columns=("col1", "col2"))
 
         frame3.grid.column("#0", width=80)
@@ -97,7 +107,77 @@ class aggProductos(Frame):
         frame3.grid.place(x=0, y=0, width=620, height=500)
         
         frame3.grid.insert("",END, text="001", values=("Menú","20.000"))
-     
+        frame3.grid.insert("",END, text="000", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="002", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="003", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="004", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="005", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="006", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="007", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="008", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="009", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="010", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="011", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="012", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="013", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="014", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="015", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="016", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="017", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="018", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="019", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="020", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="021", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="022", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="023", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="024", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="025", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="026", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="027", values=("Camarones al ajillo","50.000")) 
+        frame3.grid.insert("",END, text="028", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="029", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="030", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="031", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="032", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="033", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="034", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="035", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="036", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="037", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="038", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="039", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="040", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="041", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="042", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="043", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="044", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="045", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="046", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="047", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="048", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="049", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="050", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="051", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="052", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="053", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="054", values=("Camarones al ajillo","50.000")) 
+        frame3.grid.insert("",END, text="055", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="056", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="057", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="058", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="059", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="060", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="061", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="062", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="063", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="064", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="065", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="066", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="067", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="068", values=("Camarones al ajillo","50.000"))
+        frame3.grid.insert("",END, text="069", values=("Camarones al ajillo","50.000"))
+        
+        self.pack()
         
         
 
@@ -106,7 +186,7 @@ class aggProductos(Frame):
            
 
                
-aggProductos()
+#aggProductos()
            
 #ID = tv.insert("",END, text="Cursos")
         #tv.insert(ID,END, text="Algebra")

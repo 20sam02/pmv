@@ -103,14 +103,10 @@ class paginaprincipal:
 
             def generaFactura():
                 ventanaFactura = Tk()
-                ventanaFactura.title("GENERAR FACTURA")
-                ventanaFactura.geometry("1000x530+500+50")
-
+                ventanaFactura.title("GENERAR FACTURA")   
+                
                 app = FacturaGen(ventanaFactura)
                 app.mainloop()
-
-
-                
 
 
             boton = tk.Button(Pbase, text="Añadir productos", image=iconAnadirPr, 
@@ -119,6 +115,7 @@ class paginaprincipal:
             boton.place(x=200, y=5)
 
             def anadirproductos():
+
                 ventanaFactura = Tk()
                 ventanaFactura.title("AÑADIR PRODUCTOS")
                 
@@ -131,12 +128,15 @@ class paginaprincipal:
             boton.place(x=500, y=5)
 
 
+
             def inventario():
                 ventanaFactura = Tk()
                 ventanaFactura.title("INVENTARIO")
                 ventanaFactura.geometry("1000x530+500+50")
                 fondo = tk.PhotoImage(file="images/login1.png")
                 fondo1 = tk.Label().place(x=0, y=0, relheight=1, relwidth=1)
+
+
             boton2 = tk.Button(Pbase, text="Siigo API", cursor="hand2", image=iconSiigoApi, 
                                compound="bottom", bg=None, width=200, height=130, relief="flat", 
                                font=("Roboto", 13),  command=lambda: siigoAPI())
@@ -152,7 +152,8 @@ class paginaprincipal:
         except ValueError as error:
                     print("Error al mostrar la interfaz: {}".format(error))       
 
-        Pbase.mainloop()  
+        Pbase.mainloop()
+  
         
 loginAdmin.loginPM()            
 
