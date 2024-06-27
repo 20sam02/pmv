@@ -12,16 +12,52 @@ class Inventario (ttk.Frame):
     def __init__ (self, master=None):
         
         super().__init__(master, width=1000, height=680)
+
+        #desde el constructor init nos conectaremos a la base de datos
+        #self.conexion = sqlite3.connect('pmvpos.db')
         
         self.master = master
         
         self.pack()
         
         self.create_widgets()
+    
+    def DBconn(self):
+        conn = sqlite3.connect("pmvpos.db")
+        conn.commit()
+        conn.close()
+    
+    def createTable(self):
+        conn = sqlite3.connect("pmvpos.db")
+        cursor = conn.cursor()
+        cursor.execute(
+            """CREATE TABLE "inventario" (
+                ID integer,
+                NOMBRE text,
+                CANTIDAD integer,
+                PRECIO UNITARIO integer,
+                TOTAL integer,
+            )"""
+        )
+
+        conn.commit()
+        conn.close()
+
+        self.createTable()
+
+
         
     
     def feditar(self):
         pass
+        #, ID, Nombre, Cantidad, precioUnitario, Total
+        #cursor = self.conexion.cursor()
+        #bd = '''INSERT INTO datos_inventario(ID, NOMBRE, CANTIDAD, PRECIO UNITARIO, TOTAL)
+        #  VALUES('{}','{}','{}','{}','{}')'''.format(ID, Nombre, Cantidad, precioUnitario, Total)
+        #cursor.execute(bd)
+        #self.conexion.commit()
+        #cursor.close()
+        
     def fguardar(self):
         pass
     def feliminar(self):

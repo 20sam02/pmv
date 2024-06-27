@@ -5,6 +5,7 @@ from tkinter import ttk
 from tkinter import messagebox
 from agregarpd import *
 from factura import *
+from inventario import *
 
 import sqlite3 
 
@@ -132,9 +133,11 @@ class paginaprincipal:
             def inventario():
                 ventanaFactura = Tk()
                 ventanaFactura.title("INVENTARIO")
-                ventanaFactura.geometry("1000x530+500+50")
-                fondo = tk.PhotoImage(file="images/login1.png")
-                fondo1 = tk.Label().place(x=0, y=0, relheight=1, relwidth=1)
+                
+
+                app = Inventario(ventanaFactura)
+                app.mainloop()
+                
 
 
             boton2 = tk.Button(Pbase, text="Siigo API", cursor="hand2", image=iconSiigoApi, 

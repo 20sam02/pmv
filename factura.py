@@ -215,4 +215,4 @@ class FacturaGen (ttk.Frame):
 
         self.mainloop()
 
-FacturaGen()
+#FacturaGen()
